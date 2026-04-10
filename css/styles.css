@@ -1,419 +1,282 @@
-/* ================================================================
-   2026 Masters Pool Tracker — Windows 95 Theme
-   ================================================================ */
+/* 2026 Masters Pool Tracker Styles */
 
-/* Win95 Color Palette */
 :root {
-  --w95-gray:         #c0c0c0;
-  --w95-light:        #dfdfdf;
-  --w95-dark:         #808080;
-  --w95-darker:       #404040;
-  --w95-white:        #ffffff;
-  --w95-black:        #000000;
-  --w95-navy:         #000080;
-  --w95-blue:         #1084d0;
-  --w95-desktop:      #008080;
-
-  /* Score colors */
-  --score-under:      #006000;
-  --score-over:       #800000;
-  --score-even:       #000000;
+  --masters-green: #006747;
+  --masters-dark: #004d35;
+  --masters-gold: #FEDB00;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --gray: #e0e0e0;
+  --dark-gray: #333;
+  --score-under: #006747;
+  --score-over: #c62828;
+  --score-even: #555;
+  --dropped-bg: #fafafa;
+  --dropped-text: #aaa;
 }
 
-/* ---- Reset ---- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---- Desktop ---- */
 body {
-  font-family: "MS Sans Serif", "Microsoft Sans Serif", Arial, sans-serif;
-  font-size: 11px;
-  background: var(--w95-desktop);
-  color: var(--w95-black);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--light-gray);
+  color: var(--dark-gray);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 8px;
 }
 
-/* ================================================================
-   WIN95 WINDOW FRAME
-   ================================================================ */
+/* Header */
+.header {
+  background: var(--masters-green);
+  color: var(--white);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
 
-.win95-window {
-  width: 100%;
+.header-inner {
   max-width: 1200px;
-  min-height: calc(100vh - 16px);
-  background: var(--w95-gray);
-  display: flex;
-  flex-direction: column;
-  /* Raised window border */
-  border-top:    2px solid var(--w95-white);
-  border-left:   2px solid var(--w95-white);
-  border-right:  2px solid var(--w95-darker);
-  border-bottom: 2px solid var(--w95-darker);
+  margin: 0 auto;
 }
 
-/* ---- Title Bar ---- */
-.win95-titlebar {
-  background: linear-gradient(to right, #000080, #1084d0);
-  color: var(--w95-white);
-  padding: 3px 4px 3px 6px;
+.header-top {
   display: flex;
   align-items: center;
-  gap: 5px;
-  user-select: none;
-  flex-shrink: 0;
-}
-
-.win95-titlebar-icon {
-  height: 14px;
-  width: 14px;
-  object-fit: contain;
-  image-rendering: pixelated;
-  flex-shrink: 0;
-}
-
-.win95-titlebar-text {
-  font-weight: bold;
-  font-size: 11px;
-  flex: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.win95-titlebar-controls {
-  display: flex;
-  gap: 2px;
-  flex-shrink: 0;
-}
-
-/* Win95 window chrome buttons (_, □, ✕) */
-.win95-btn-control {
-  width: 16px;
-  height: 14px;
-  background: var(--w95-gray);
-  color: var(--w95-black);
-  font-size: 9px;
-  font-family: "MS Sans Serif", Arial, sans-serif;
-  font-weight: bold;
-  border-top:    1px solid var(--w95-white);
-  border-left:   1px solid var(--w95-white);
-  border-right:  1px solid var(--w95-darker);
-  border-bottom: 1px solid var(--w95-darker);
-  cursor: default;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  padding: 0 0 1px 0;
-}
-
-.win95-btn-control:active {
-  border-top:    1px solid var(--w95-darker);
-  border-left:   1px solid var(--w95-darker);
-  border-right:  1px solid var(--w95-white);
-  border-bottom: 1px solid var(--w95-white);
-  padding: 1px 0 0 1px;
-}
-
-/* ---- Toolbar ---- */
-.win95-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 6px;
-  background: var(--w95-gray);
-  /* Beveled separator line */
-  border-bottom: 1px solid var(--w95-dark);
-  box-shadow: 0 1px 0 var(--w95-white);
+  gap: 1rem;
   flex-wrap: wrap;
-  flex-shrink: 0;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
 }
 
 .pool-label {
-  font-weight: bold;
-  font-size: 12px;
-  color: var(--w95-black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--masters-gold);
+  opacity: 0.9;
 }
 
 .cut-badge {
-  background: var(--w95-navy);
-  color: var(--w95-white);
-  font-size: 9px;
-  font-weight: bold;
-  padding: 1px 6px;
+  background: var(--masters-gold);
+  color: var(--masters-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
   letter-spacing: 1px;
-  border-top:    1px solid var(--w95-blue);
-  border-left:   1px solid var(--w95-blue);
-  border-right:  1px solid #000040;
-  border-bottom: 1px solid #000040;
 }
 
-.toolbar-spacer {
-  flex: 1;
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .status-text {
-  font-size: 11px;
-  color: var(--w95-black);
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 .last-updated {
-  font-size: 10px;
-  color: var(--w95-dark);
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 
-/* Win95-style button */
 .refresh-btn {
-  background: var(--w95-gray);
-  color: var(--w95-black);
-  border-top:    2px solid var(--w95-white);
-  border-left:   2px solid var(--w95-white);
-  border-right:  2px solid var(--w95-darker);
-  border-bottom: 2px solid var(--w95-darker);
-  padding: 3px 14px;
-  font-family: "MS Sans Serif", Arial, sans-serif;
-  font-size: 11px;
-  cursor: default;
-  min-width: 75px;
-  text-align: center;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.2s;
 }
 
-.refresh-btn:active {
-  border-top:    2px solid var(--w95-darker);
-  border-left:   2px solid var(--w95-darker);
-  border-right:  2px solid var(--w95-white);
-  border-bottom: 2px solid var(--w95-white);
-  padding: 4px 13px 2px 15px;
+.refresh-btn:hover {
+  background: rgba(255,255,255,0.25);
 }
 
 .refresh-btn:disabled {
-  color: var(--w95-dark);
-  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-/* ================================================================
-   CONTENT AREA
-   ================================================================ */
-
-.win95-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 8px;
-  background: var(--w95-gray);
+/* Main */
+.main {
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 1rem;
 }
 
-/* ---- Table Wrapper (sunken inset panel) ---- */
 .table-wrapper {
   overflow-x: auto;
-  background: var(--w95-white);
-  border-top:    2px solid var(--w95-dark);
-  border-left:   2px solid var(--w95-dark);
-  border-right:  2px solid var(--w95-white);
-  border-bottom: 2px solid var(--w95-white);
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* ---- Leaderboard Table ---- */
+/* Leaderboard Table */
 .leaderboard {
   width: 100%;
   border-collapse: collapse;
-  font-size: 11px;
-  background: var(--w95-white);
+  font-size: 0.9rem;
 }
 
 .leaderboard thead {
-  background: var(--w95-navy);
-  color: var(--w95-white);
+  background: var(--masters-dark);
+  color: var(--white);
 }
 
 .leaderboard th {
-  padding: 4px 6px;
+  padding: 0.75rem 0.5rem;
   text-align: left;
-  font-weight: bold;
-  font-size: 11px;
+  font-weight: 600;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   white-space: nowrap;
-  border-right: 1px solid #000066;
 }
 
-.leaderboard th:last-child {
-  border-right: none;
-}
+.th-rank { width: 40px; text-align: center; }
+.th-score { width: 70px; text-align: center; }
+.th-tiebreaker { width: 50px; text-align: center; }
 
-.th-rank       { width: 40px;  text-align: center; }
-.th-score      { width: 70px;  text-align: center; }
-.th-tiebreaker { width: 50px;  text-align: center; }
-
-/* Table rows */
 .participant-row {
-  cursor: default;
-  border-bottom: 1px solid var(--w95-gray);
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid var(--gray);
 }
 
 .participant-row:hover {
-  background: var(--w95-navy);
-  color: var(--w95-white);
-}
-
-/* When hovered, force child text colors to white */
-.participant-row:hover .rank-cell,
-.participant-row:hover .score-cell,
-.participant-row:hover .tiebreaker-cell,
-.participant-row:hover .expand-icon,
-.participant-row:hover .golfer-chip {
-  color: var(--w95-white) !important;
-  background: transparent !important;
+  background: #f0f9f0;
 }
 
 .participant-row.expanded {
-  background: var(--w95-navy);
-  color: var(--w95-white);
-}
-
-.participant-row.expanded .rank-cell,
-.participant-row.expanded .score-cell,
-.participant-row.expanded .tiebreaker-cell,
-.participant-row.expanded .expand-icon,
-.participant-row.expanded .golfer-chip {
-  color: var(--w95-white) !important;
-  background: transparent !important;
+  background: #e8f5e9;
 }
 
 .participant-row td {
-  padding: 3px 6px;
+  padding: 0.6rem 0.5rem;
   vertical-align: middle;
 }
 
 .rank-cell {
   text-align: center;
-  font-weight: bold;
-  font-size: 12px;
-  color: var(--w95-navy);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--masters-green);
 }
 
-/* #1 gets a slightly larger rank */
 .rank-leader {
-  font-size: 13px;
+  color: var(--masters-gold) !important;
+  text-shadow: 0 0 2px rgba(0,0,0,0.3);
+  font-size: 1.1rem;
 }
 
 .name-cell {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.4rem;
 }
 
 .participant-name {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .expand-icon {
-  font-size: 8px;
-  color: var(--w95-dark);
-  /* No animation — Win95 doesn't animate */
+  font-size: 1rem;
+  opacity: 0.5;
+  transition: transform 0.2s;
+  color: var(--masters-green);
 }
 
 .expanded .expand-icon {
-  /* Rotated triangle */
   transform: rotate(180deg);
 }
 
 .score-cell {
   text-align: center;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .score-under { color: var(--score-under); }
-.score-over  { color: var(--score-over);  }
-.score-even  { color: var(--score-even);  }
+.score-over { color: var(--score-over); }
+.score-even { color: var(--score-even); }
 
-/* Golfer chips in main row */
 .golfers-cell {
   display: flex;
   flex-wrap: wrap;
-  gap: 2px;
+  gap: 0.25rem;
 }
 
 .golfer-chip {
-  font-size: 10px;
-  padding: 0 4px;
-  background: var(--w95-gray);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  background: #f0f0f0;
   white-space: nowrap;
-  border-top:    1px solid var(--w95-white);
-  border-left:   1px solid var(--w95-white);
-  border-right:  1px solid var(--w95-dark);
-  border-bottom: 1px solid var(--w95-dark);
+  font-weight: 500;
 }
 
-.golfer-chip.score-under { color: var(--score-under); }
-.golfer-chip.score-over  { color: var(--score-over);  }
+.golfer-chip.score-under { background: #e8f5e9; color: var(--score-under); }
+.golfer-chip.score-over { background: #ffebee; color: var(--score-over); }
 .golfer-chip.dropped {
   text-decoration: line-through;
-  color: var(--w95-dark);
-  opacity: 0.65;
+  opacity: 0.45;
+  background: #f5f5f5;
 }
 
 .tiebreaker-cell {
   text-align: center;
-  font-size: 11px;
-  color: var(--w95-dark);
+  font-size: 0.85rem;
+  color: #777;
 }
 
 .loading-cell {
   text-align: center;
-  padding: 20px;
-  color: var(--w95-dark);
+  padding: 2rem;
+  color: #999;
   font-style: italic;
 }
 
-/* ================================================================
-   DETAIL / EXPANDED ROW
-   ================================================================ */
-
+/* Detail Row */
 .detail-row td {
   padding: 0 !important;
-  background: var(--w95-gray);
-  border-bottom: 2px solid var(--w95-dark);
+  background: #fafffe;
+  border-bottom: 2px solid var(--masters-green);
 }
 
 .golfer-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 6px;
-  padding: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
 }
 
-/* Each golfer group = raised panel */
 .golfer-group {
-  background: var(--w95-gray);
-  border-top:    2px solid var(--w95-white);
-  border-left:   2px solid var(--w95-white);
-  border-right:  2px solid var(--w95-darker);
-  border-bottom: 2px solid var(--w95-darker);
+  background: var(--white);
+  border: 1px solid var(--gray);
   overflow: hidden;
 }
 
 .group-label {
-  background: var(--w95-navy);
-  color: var(--w95-white);
-  padding: 2px 6px;
-  font-size: 10px;
-  font-weight: bold;
+  background: var(--masters-green);
+  color: var(--white);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .golfer-card {
-  padding: 4px 6px;
-  border-bottom: 1px solid var(--w95-dark);
-  background: var(--w95-gray);
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .golfer-card:last-child {
@@ -421,188 +284,111 @@ body {
 }
 
 .golfer-dropped {
-  opacity: 0.65;
+  background: var(--dropped-bg);
 }
 
 .golfer-dropped .golfer-full-name {
   text-decoration: line-through;
-  color: var(--w95-dark);
+  color: var(--dropped-text);
 }
 
 .golfer-name-row {
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-bottom: 2px;
+  gap: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 
 .golfer-full-name {
-  font-weight: bold;
-  font-size: 11px;
+  font-weight: 600;
+  font-size: 0.85rem;
 }
 
-/* DROPPED badge */
 .dropped-badge {
-  background: #800000;
-  color: var(--w95-white);
-  font-size: 8px;
-  padding: 0 4px;
-  font-weight: bold;
+  background: #ef5350;
+  color: white;
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  border-top:    1px solid #c04040;
-  border-left:   1px solid #c04040;
-  border-right:  1px solid #400000;
-  border-bottom: 1px solid #400000;
 }
 
-/* N/A badge */
 .status-badge.unknown {
-  background: #808000;
-  color: var(--w95-white);
-  font-size: 8px;
-  padding: 0 4px;
-  font-weight: bold;
+  background: #ff9800;
+  color: white;
+  font-size: 0.6rem;
+  padding: 0.1rem 0.35rem;
+  font-weight: 700;
 }
 
 .golfer-stats {
   display: flex;
-  gap: 8px;
-  font-size: 10px;
-  color: var(--w95-black);
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: #666;
 }
 
 .golfer-score {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .golfer-rounds {
-  font-size: 9px;
-  color: var(--w95-dark);
-  margin-top: 2px;
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 0.2rem;
 }
 
-/* ================================================================
-   LEGEND / POOL RULES — raised panel
-   ================================================================ */
-
+/* Legend */
 .legend {
-  margin-top: 8px;
-  padding: 8px;
-  background: var(--w95-gray);
-  border-top:    2px solid var(--w95-white);
-  border-left:   2px solid var(--w95-white);
-  border-right:  2px solid var(--w95-darker);
-  border-bottom: 2px solid var(--w95-darker);
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--white);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 .legend h3 {
-  color: var(--w95-black);
-  margin-bottom: 4px;
-  font-size: 11px;
-  font-weight: bold;
+  color: var(--masters-green);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .legend ul {
-  padding-left: 20px;
-  font-size: 11px;
-  color: var(--w95-black);
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: #555;
 }
 
 .legend li {
-  margin-bottom: 2px;
+  margin-bottom: 0.25rem;
 }
 
 .legend-note {
-  margin-top: 6px;
-  font-size: 10px;
-  color: var(--w95-dark);
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: #999;
+  font-style: italic;
 }
 
-/* ================================================================
-   STATUS BAR
-   ================================================================ */
-
-.win95-statusbar {
-  display: flex;
-  gap: 2px;
-  padding: 2px 4px;
-  background: var(--w95-gray);
-  border-top: 1px solid var(--w95-dark);
-  flex-shrink: 0;
-}
-
-.statusbar-panel {
-  font-size: 11px;
-  color: var(--w95-black);
-  padding: 1px 6px;
-  /* Sunken inset */
-  border-top:    1px solid var(--w95-dark);
-  border-left:   1px solid var(--w95-dark);
-  border-right:  1px solid var(--w95-white);
-  border-bottom: 1px solid var(--w95-white);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.statusbar-panel:first-child {
-  flex: 1;
-}
-
-/* ================================================================
-   SCROLLBARS — Win95 style
-   ================================================================ */
-
-::-webkit-scrollbar {
-  width: 17px;
-  height: 17px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--w95-gray);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--w95-gray);
-  border-top:    2px solid var(--w95-white);
-  border-left:   2px solid var(--w95-white);
-  border-right:  2px solid var(--w95-darker);
-  border-bottom: 2px solid var(--w95-darker);
-}
-
-::-webkit-scrollbar-button {
-  display: block;
-  background: var(--w95-gray);
-  border-top:    2px solid var(--w95-white);
-  border-left:   2px solid var(--w95-white);
-  border-right:  2px solid var(--w95-darker);
-  border-bottom: 2px solid var(--w95-darker);
-  width: 17px;
-  height: 17px;
-}
-
-::-webkit-scrollbar-corner {
-  background: var(--w95-gray);
-}
-
-/* ================================================================
-   RESPONSIVE
-   ================================================================ */
-
+/* Mobile */
 @media (max-width: 768px) {
-  body {
-    padding: 0;
+  .header-logo {
+    height: 30px;
   }
 
-  .win95-window {
-    min-height: 100vh;
-    border-left: none;
-    border-right: none;
+  .pool-label {
+    font-size: 0.85rem;
   }
 
-  .golfers-cell,
+  .golfers-cell {
+    display: none;
+  }
+
   .th-golfers {
     display: none;
+  }
+
+  .leaderboard {
+    font-size: 0.85rem;
   }
 
   .golfer-detail-grid {
@@ -614,25 +400,21 @@ body {
   }
 
   .participant-name {
-    font-size: 11px;
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 480px) {
-  .win95-toolbar {
-    padding: 3px;
-    gap: 4px;
+  .header {
+    padding: 0.75rem;
   }
 
-  .win95-content {
-    padding: 4px;
+  .main {
+    padding: 0 0.5rem;
+    margin: 0.5rem auto;
   }
 
   .participant-row td {
-    padding: 3px;
-  }
-
-  .pool-label {
-    font-size: 11px;
+    padding: 0.5rem 0.3rem;
   }
 }
