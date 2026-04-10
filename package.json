@@ -1,0 +1,9 @@
+{
+  "name": "masters-tracker",
+  "version": "1.0.0",
+  "description": "2026 Masters Pool Scoring Tracker",
+  "private": true,
+  "dependencies": {
+    "@netlify/functions": "^2.0.0"
+  }
+}

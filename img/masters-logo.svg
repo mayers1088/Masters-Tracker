@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <!-- Masters Tournament Wordmark -->
+  <text x="200" y="55" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="bold" font-style="italic" fill="#FEDB00" letter-spacing="3">MASTERS</text>
+  <text x="200" y="90" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#FEDB00" letter-spacing="6">TOURNAMENT</text>
+  <!-- Decorative underline -->
+  <line x1="80" y1="100" x2="320" y2="100" stroke="#FEDB00" stroke-width="1.5" opacity="0.6"/>
+</svg>
